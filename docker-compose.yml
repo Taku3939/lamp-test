@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  httpd:
+    container_name: httpd
+    build:
+      context: ./docker/httpd
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    environment:
+      TZ: Asia/Tokyo
+    tty: true
+    # privileged: true
+    depends_on:
+      - db
+  db:
+    container_name: db
+    build:
+      context: ./docker/db
+      dockerfile: Dockerfile
+    #    restart: always
+    environment:
+      MYSQL_DATABASE: hbtask
+      MYSQL_USER: test_user
+      MYSQL_PASSWORD: uouo
+      MYSQL_ROOT_PASSWORD: uouo
+      TZ: Asia/Tokyo
