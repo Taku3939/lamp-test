@@ -26,3 +26,7 @@ services:
       MYSQL_PASSWORD: uouo
       MYSQL_ROOT_PASSWORD: uouo
       TZ: Asia/Tokyo
+    networks:
+      default:
+        aliases:
+          - db.local
