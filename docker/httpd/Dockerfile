@@ -19,8 +19,6 @@ RUN apt-get install -y apache2 \
 
 RUN mkdir -p /etc/httpd/conf/
 RUN touch /etc/httpd/conf/httpd.conf
-RUN echo "ServerName db.local:3306" >> /etc/httpd/conf/httpd.conf
-# RUN echo "ServerName db" >> /etc/httpd/conf/httpd.conf
 #ファイルのコピー
 COPY ./public/ /var/www/html
 
