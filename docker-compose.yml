@@ -18,7 +18,7 @@ services:
   db:
     container_name: db
     volumes:
-      - ./docker/db:/var/lib/mysql #ここにデータ永続化するためのファイルが入る。
+      - ./docker/db/data:/var/lib/mysql #ここにデータ永続化するためのファイルが入る。
     build:
       context: ./docker/db
       dockerfile: Dockerfile
