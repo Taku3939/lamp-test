@@ -17,10 +17,11 @@ services:
       - db
   db:
     container_name: db
+    volumes:
+      - ./docker/db:/var/lib/mysql #ここにデータ永続化するためのファイルが入る。
     build:
       context: ./docker/db
       dockerfile: Dockerfile
-    #    restart: always
     environment:
       MYSQL_DATABASE: hbtask
       MYSQL_USER: test_user
