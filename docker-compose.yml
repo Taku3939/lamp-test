@@ -11,6 +11,7 @@ services:
     environment:
       TZ: Asia/Tokyo
     tty: true
+    restart: always
     # privileged: true
     depends_on:
       - db
@@ -26,6 +27,7 @@ services:
       MYSQL_PASSWORD: uouo
       MYSQL_ROOT_PASSWORD: uouo
       TZ: Asia/Tokyo
+    restart: always
     networks:
       default:
         aliases:
